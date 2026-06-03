@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UltraHuman Invoice Organizer</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Legal operations intake</p>
+          <h1>UltraHuman Invoice Organizer</h1>
+          <p class="hero-copy">
+            Forward invoice emails to a controlled Google Workspace inbox, extract payment terms and attachment metadata, then export a Zoho-ready sheet.
+          </p>
+          <div class="actions">
+            <button id="sign-in" class="primary">Sign in with UltraHuman Google Workspace</button>
+            <a class="secondary" href="/api/export.csv">Download Excel/Zoho CSV</a>
+          </div>
+        </div>
+        <aside class="status-card">
+          <span class="status-pill" id="auth-mode">Loading</span>
+          <h2>Forward invoices to</h2>
+          <p id="intake-email">legal-invoices@ultrahuman.com</p>
+          <small>Restrict access to the UltraHuman Workspace domain before production use.</small>
+        </aside>
+      </section>
+
+      <section class="workflow" aria-label="Workflow steps">
+        <article>
+          <strong>1</strong>
+          <h3>Forward</h3>
+          <p>Counsel forwards vendor emails and attachments to the shared intake account.</p>
+        </article>
+        <article>
+          <strong>2</strong>
+          <h3>Extract</h3>
+          <p>The tool reads invoice number, vendor, amount, due date, payment terms, and category.</p>
+        </article>
+        <article>
+          <strong>3</strong>
+          <h3>Review</h3>
+          <p>Legal ops validates extracted rows before exporting to Excel or Zoho Sheets.</p>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Inbox register</p>
+            <h2>Invoices awaiting review</h2>
+          </div>
+          <input id="filter" type="search" placeholder="Filter vendor, terms, category..." />
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Received</th>
+                <th>Vendor</th>
+                <th>Invoice #</th>
+                <th>Payment terms</th>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Attachments</th>
+              </tr>
+            </thead>
+            <tbody id="invoice-rows"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

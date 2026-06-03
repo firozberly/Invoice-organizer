@@ -1,0 +1,20 @@
+{
+  "name": "invoice-organizer",
+  "version": "0.1.0",
+  "description": "Web-based invoice intake and organization prototype for legal teams.",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "invoice",
+    "gmail",
+    "zoho",
+    "legal-ops"
+  ],
+  "license": "UNLICENSED"
+}
